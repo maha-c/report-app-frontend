@@ -249,6 +249,10 @@ function UsersTable({ Users, onAction }: UsersTableProps) {
         setCurrentPage(0); // reset current page to 0 when search query changes
     };
 
+    const maskText = (text : string) => {
+        return '*'.repeat(text.length)
+    }
+
     const filteredUsers = Users.filter(
         (User) =>
             User.userName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -293,7 +297,7 @@ function UsersTable({ Users, onAction }: UsersTableProps) {
                                 </td>
                                 <td style={{ border: '1px solid black' }}>{User.userName}</td>
                                 <td style={{ border: '1px solid black' }}>
-                                    {User.password}
+                                    {maskText(User.password)}
                                 </td>
                                 <td style={{ border: '1px solid black' }}>{User.role}</td>
                             </tr>
