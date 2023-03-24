@@ -166,7 +166,7 @@ export function MeetingDetails({ selectedMeetingId, onAction }: MeetingDetailsPr
     }));
   };
 
-  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTimeChangeold = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const dateTime = value + ':00.000Z';
     setMeeting(prevMeeting => ({
@@ -175,6 +175,25 @@ export function MeetingDetails({ selectedMeetingId, onAction }: MeetingDetailsPr
     }));
   };
 
+
+  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const date = new Date(value);
+    const offsetMs = date.getTimezoneOffset() * 60 * 1000;
+    const dateTime = new Date(date.getTime() - offsetMs).toISOString();
+    setMeeting(prevMeeting => ({
+      ...prevMeeting,
+      [name]: dateTime,
+    }));
+  };
+  
+  
+  
+  
+  
+
+
+  
 
 
   if (isLoading) {

@@ -24,7 +24,12 @@ export function CreateMeeting({ onAction }: CreateMeetingProps) {
 
 
   const handleCreateMeeting = async () => {
+    console.log("new in -->  " +newMeeting.time)
     const createdMeeting = await createMeeting(newMeeting);
+    console.log("new out ad-->  " + createdMeeting.address)
+    console.log("new out aTomed-->  " + createdMeeting.time)
+    console.log("new out id-->  " + createdMeeting.meeting_id)
+    console.log("new out su-->  " + createdMeeting.summary)
     onAction.handleRefresh()
     setNewMeetingId(createdMeeting.meeting_id);
     setIsCreated(true)
@@ -61,6 +66,16 @@ export function CreateMeeting({ onAction }: CreateMeetingProps) {
     }));
   };
 
+ 
+  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const dateTime = new Date(value).getTime();
+    setNewMeeting(prevMeeting => ({
+      ...prevMeeting,
+      [name]: dateTime,
+    }));
+  };
+  
 
   useState(() => {
     (async () => {
@@ -82,8 +97,10 @@ export function CreateMeeting({ onAction }: CreateMeetingProps) {
         <input
           type="datetime-local"
           name="time"
-          value={newMeeting.time ? new Date(newMeeting.time).toISOString().slice(0, -8) : ''}
-          onChange={handleNewMeetingChange}
+          value={newMeeting.time
+            ? new Date(newMeeting.time).toISOString().slice(0, -8)
+            : ''}
+          onChange={handleTimeChange}
         />
 
         <label>Summary:</label>
@@ -95,7 +112,7 @@ export function CreateMeeting({ onAction }: CreateMeetingProps) {
       )}
 
       {isCreated && (
-        <p>New Meeeting created with ID: {newMeetingId}</p>
+        <p>New Meeting created with ID: {newMeetingId}</p>
       )}
 
 

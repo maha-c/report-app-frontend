@@ -1,4 +1,5 @@
   import { useEffect, useState } from 'react';
+import { Form } from 'react-router-dom';
   import { Login, userAuthentication } from '../api/requests';
 
   interface SignInProps {
@@ -39,16 +40,23 @@
       
       return <>
 
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
-    <h1>Welcome to Attleboro City Council</h1>
-    <h2 style={{ marginBottom: '1rem' }}>Sign In</h2>
+
+<div className="sign-container">
+  <div className="left-section">
+    <img src="/src/images/city.jpeg" alt="City" />
+  </div>
+  <div className="right-section">
+  <div style={{ display: 'flex',  fontFamily: 'Open Sans', fontSize: '18px',flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
+    <div style={{ textAlign: 'center'}}>
+      <h1>Welcome to Attleboro City Council</h1> </div>
+   
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid #ccc', padding: '1rem', borderRadius: '0.25rem' }} onSubmit={(e) => e.preventDefault()} >
-      <label style={{ marginBottom: '0.5rem' }}>
+      <label style={{ marginBottom: '0.5rem', fontFamily: 'Open Sans', fontSize: '18px' }}>
         Username:
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} style={{ marginLeft: '0.5rem' }} />
       </label>
-      <label style={{ marginBottom: '0.5rem' }}>
-        Password:
+      <label style={{ marginBottom: '0.5rem' , fontFamily: 'Open Sans', fontSize: '18px'}}>
+        Password: 
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ marginLeft: '0.5rem' }} />
       </label>
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
@@ -59,7 +67,26 @@
       </div>
     </div>
     {error && <p className="error" style={{ marginTop: '1rem', color: 'red' }}>{error}</p>}
+    <div style={{ height: '1rem' }}></div>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+  <a href="#">Copyright &copy; 2023 Attleboro City Council</a>
+  <div style={{ height: '1rem' }}></div>
+  <div style={{ height: '5rem', textAlign: 'center' }}>
+  <a href="#">Contact Us</a>
   </div>
+  
+</div>
 
-    </>
-  };
+  
+</div>
+
+  </div>
+  
+  </div>
+  
+</div>
+
+    
+</>
+ };

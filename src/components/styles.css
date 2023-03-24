@@ -5,6 +5,8 @@ table {
   margin: 1 auto;
   font-size: 14px;
   line-height: 1;
+  font-Family: 'Open Sans'
+  
 }
 
 table th,
@@ -17,6 +19,7 @@ table td {
 table th {
   background-color: #5ba45b;
   font-weight: bold;
+  font-size: 16px;
   color: #231a0b;
 }
 
@@ -43,13 +46,11 @@ input[type="password"] {
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: #0070f3;
-  outline: none;
-}
+input[type="password"]:focus
 
 input[type="text"] {
   width: 300px;
@@ -97,10 +98,10 @@ input[type="datetime-local"] {
   background-color: #8394e9;
 }
 
-/* body {
-  background-image: url('/src/images/ny1.jpeg');
+ /* body {
+  background-image: url('/src/images/sim2.jpeg');
   background-size: cover;
-  opacity: 100%; 
+  opacity: 1000%; 
 }  */
 
 .tab-menu-item-selected {
@@ -153,3 +154,101 @@ button {
 button:hover {
   background-color: #3367d7;
 }
+
+/* css for the sign in page*/
+
+/* Set background color and font styles */
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+/* Center the sign-in form on the page */
+
+.sign-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-section {
+  flex: 2;
+  background-image: url("/src/images/city.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-form {
+  background-color: #fff;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.sign-form input[type="text"],
+.sign-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.sign-form input[type="submit"] {
+  background-color: #008CBA;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.sign-form input[type="submit"]:hover {
+  background-color: #006D87;
+}
+
+.guest-right-section {
+  width: 400px;
+  height: 300px;
+  border: 2px solid black;
+  overflow: hidden;
+  position: relative;
+}
+
+.guest-right-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.guest-right-section:hover::before {
+  transform: scale(1.1);
+}
+
+.guest-right-section > div {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

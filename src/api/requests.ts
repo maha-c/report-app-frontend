@@ -63,9 +63,9 @@
     role: string
 
   }
-  //export const url = "http://127.0.0.1:8080";
+  export const url = "http://127.0.0.1:8080";
 
-  export const url = "http://34.206.72.137:8080";
+  //export const url = "http://34.206.72.137:8080";
 
   export async function getAllComplaintsoo():Promise<Complaint[]> {
       const response = await (await (fetch(`${url}/Complaints`))).json()

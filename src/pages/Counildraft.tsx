@@ -70,9 +70,9 @@
                     <thead>
                         <tr>
                             <th style={{ border: '1px solid black' }}>ID</th>
-                            <th style={{ border: '1px solid black' }}>Description</th>
-                            <th style={{ border: '1px solid black' }}>Meeting #</th>
-                            <th style={{ border: '1px solid black' }}>Status</th>
+                            <th style={{ border: '1px solid black' }}>DESCRIPTION</th>
+                            <th style={{ border: '1px solid black' }}>MEETING ID</th>
+                            <th style={{ border: '1px solid black' }}>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -170,7 +170,7 @@
                         <tr>
                             <th style={{ border: '1px solid black' }}>ID</th>
                             <th style={{ border: '1px solid black' }}>ADDRESS</th>
-                            <th style={{ border: '1px solid black' }}>DATE/TIME #</th>
+                            <th style={{ border: '1px solid black' }}>DATE/TIME</th>
                             <th style={{ border: '1px solid black' }}>SUMMARY</th>
                         </tr>
                     </thead>
@@ -280,9 +280,9 @@
                     <thead>
                         <tr>
                             <th style={{ border: '1px solid black' }}>ID</th>
-                            <th style={{ border: '1px solid black' }}>UserName</th>
-                            <th style={{ border: '1px solid black' }}>Password</th>
-                            <th style={{ border: '1px solid black' }}>Role</th>
+                            <th style={{ border: '1px solid black' }}>USERNAME</th>
+                            <th style={{ border: '1px solid black' }}>PASSWORD</th>
+                            <th style={{ border: '1px solid black' }}>ROLE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -386,6 +386,7 @@
                     display: 'flex',
                     justifyContent: 'flex-end',
                     alignItems: 'center',
+                    fontFamily: 'Open Sans', fontSize: '18px'
                 }}>
                     <h2>Welcome {user.userName} ({user.role})</h2>
                     <button onClick={onLogout}>Logout</button>

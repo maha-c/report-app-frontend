@@ -4,9 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UnregisteredHome from './pages/UnregisteredHome';
 import Dashboard from './pages/Counildraft';
 import {SignIn} from './pages/signinPage';
-import GuestPage from './pages/GuestPage';
 import { MeetingsPage } from './components/meeting'
-import CreateUser from './components/createUser';
 
 export const queryClient = new QueryClient();
 
